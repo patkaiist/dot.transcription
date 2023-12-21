@@ -4,6 +4,14 @@ This is a system I use in my own data sets for simple, easily-readable concept I
 
 The purpose of this system is so that I can quickly type out detailed concept IDs to keep things distinct in the database while also having readily formatted versions for both a concept name and a gloss. These dot-formatted IDs are used internally for cross-linguistic databases that I work with for documentation and typological purposes.
 
+It is meant to allow like-concepts to be grouped together as part of the unique concept identifierr without cluttering a display name or gloss. 
+
+For example, `bee` and `bee.:hornet` should reaonsably be connected semantically, but "bee" should not be part of a gloss or simple name for the concept. Likewise `bee::hive` includes a separator that still links it to a semantic "bee" region in the list, and `bee..general` flags the concept as the most general term for bees while not needing to include that as part of a gloss.
+
+Verb stems are explicitly marked with `:to` in all cases, without exception, reducing ambiguity in the concept naming.
+
+Outside of the formatting itself, but related to the form in which concept IDs exist, all ambiguous concepts require some form of additional information in the ID to prevent confusion. A concept `spicy` may be misinterpreted in elicitation based on one's dialect of English to mean "having a great amount of spices". This is resolved by appending `..of.chilis`. While many such ambiguities should also be clear in the corresponding definitions for each comment, by including such information in the concept ID itself, there is one less possible point of confusion for those conducting the elicitation and data coding.
+
 ## tags
 
 ```
