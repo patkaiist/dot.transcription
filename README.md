@@ -23,7 +23,7 @@ Outside of the formatting itself, but related to the form in which concept IDs e
 :::     Linnean taxonomy formatting
 ```
 
-The basic table looks like this:
+The basic table looks like this, with all **name** and **gloss** values being automatically generated from the concept ID itself:
 
 | concept | name | gloss | conc_id | conc_name |
 |--------------------------|------------------------|---------------|--------:|-----------|
