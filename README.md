@@ -39,6 +39,7 @@ The basic table looks like this, with all **name** and **gloss** values being au
 | blind:to.be | to be blind | blind | | |
 | blood | blood | blood | 946 | BLOOD |
 | blunt..of.edge:to.be | to be blunt (of edge) | blunt | 379 | BLUNT |
+| blunt..of.a.point:to.be | to be blunt (of a point) | blunt | 379 | BLUNT |
 | bone | bone | bone | 1394 | BONE |
 | bos.frontalis..mithun::: | _Bos frontalis (mithun)_ | bos.frontalis | – | – |
 | bos.gaurus..gaur::: | _Bos gaurus (gaur)_ | bos.gaurus | – | – |
