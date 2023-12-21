@@ -53,3 +53,7 @@ The name can then be converted to the gloss with `=REGEXREPLACE(REGEXREPLACE(LOW
 Is this the best way to do this? Probably not.
 
 Is it useful to anyone but me? Possibly not.
+
+## Other benefits
+
+1. Quick assignment of semantic categories. For example, most RICE nouns will begin with `rice:` or `rice.`. Thus `/rice[\.\:]+/` can be used to filter and assign tags to all such terms.
