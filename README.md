@@ -44,9 +44,9 @@ The basic table looks like this, with all **name** and **gloss** values being au
 | bos.frontalis..mithun::: | _Bos frontalis (mithun)_ | bos.frontalis | – | – |
 | bos.gaurus..gaur::: | _Bos gaurus (gaur)_ | bos.gaurus | – | – |
 
-The easiest way to use this right now is in a spreadsheet. In a spreadsheet, the concept value is easily converted to the name with `=SUBSTITUTE(REGEXREPLACE(REGEXREPLACE(REGEXREPLACE(REGEXREPLACE(REGEXREPLACE(IF(RIGHT(D2,3)=":::", UPPER(LEFT(D2,1))&MID(D2,2,LEN(D2)-4), D2),"([0-9a-z.]+)\:\.([0-9a-z.]+)","$1"),"([0-9a-z.]+)\.\:([0-9a-z.]+)","$2"),"([a-z.]+)\:\:([a-z.]+)","$1$2"),"([a-z.]+)\:([a-z.]+)","$2.$1"),"([0-9a-z.]+)\.\.([0-9a-z.]+)","$1 ($2)"),"."," ")`.
+The easiest way to use this right now is in a spreadsheet. In a spreadsheet, the concept value is easily converted to the name with `=SUBSTITUTE(REGEXREPLACE(REGEXREPLACE(REGEXREPLACE(REGEXREPLACE(REGEXREPLACE(REGEXREPLACE(IF(RIGHT(E35,3)=":::", UPPER(LEFT(E35,1))&MID(E35,2,LEN(E35)-4), E35),"([0-9a-z.]+)\:\.([0-9a-z.]+)","$1"),"([0-9a-z.]+)\.\:([0-9a-z.]+)","$2"),"([a-z.]+)\:\:([a-z.]+)","$1$2"),"([a-z.]+)\:([a-z.]+)","$2.$1"),"([0-9a-z.]+)\.\.([0-9a-z.\/]+)","$1 ($2)"),"([a-z.]+)\:([a-z.]+)","$2.$1"),"."," ")`.
 
-The name can then be converted to the gloss with `=REGEXREPLACE(REGEXREPLACE(LOWER(SUBSTITUTE(SUBSTITUTE(REGEXREPLACE(REGEXREPLACE(E2,"^to.be.",""),"^to.have.",""),".of.bird","")," ",".")),"^to.",""), "\.\([^)]*\)", "")`.
+The name can then be converted to the gloss with `=TRIM(REGEXREPLACE(REGEXREPLACE(LOWER(SUBSTITUTE(SUBSTITUTE(REGEXREPLACE(REGEXREPLACE(F34,"^to be ",""),"^to have ","")," of bird","")," ",".")),"^to ",""), "\.\([^)]*\)", ""))`.
 
 ## Reasonable questions to ask
 
