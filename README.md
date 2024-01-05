@@ -12,6 +12,8 @@ Verb stems are explicitly marked with `:to` in all cases, without exception, red
 
 Outside of the formatting itself, but related to the form in which concept IDs exist, all ambiguous concepts require some form of additional information in the ID to prevent confusion. A concept `spicy` may be misinterpreted in elicitation based on one's dialect of English to mean "having a great amount of spices". This is resolved by appending `..of.chilis`. While many such ambiguities should also be clear in the corresponding definitions for each comment, by including such information in the concept ID itself, there is one less possible point of confusion for those conducting the elicitation and data coding.
 
+This also allows for quick assignment or filtering for semantic categories. For example, most RICE nouns will begin with `rice:` or `rice.`. Thus `/rice[\.\:]+/` can be used to filter and assign tags to all such terms.
+
 ## tags
 
 ```
@@ -53,7 +55,3 @@ The name can then be converted to the gloss with `=TRIM(REGEXREPLACE(REGEXREPLAC
 Is this the best way to do this? Probably not.
 
 Is it useful to anyone but me? Possibly not.
-
-## Other benefits
-
-1. Quick assignment of semantic categories. For example, most RICE nouns will begin with `rice:` or `rice.`. Thus `/rice[\.\:]+/` can be used to filter and assign tags to all such terms.
