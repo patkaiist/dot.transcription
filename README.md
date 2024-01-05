@@ -6,7 +6,7 @@ The purpose of this system is so that I can quickly type out detailed concept ID
 
 It is meant to allow like-concepts to be grouped together as part of the unique concept identifierr without cluttering a display name or gloss. 
 
-For example, `bee` and `bee.:hornet` should reaonsably be connected semantically, but "bee" should not be part of a gloss or simple name for the concept. Likewise `bee::hive` includes a separator that still links it to a semantic "bee" region in the list, and `bee..general` flags the concept as the most general term for bees while not needing to include that as part of a gloss.
+For example, `bee` and `bee.:hornet` should reaonsably be connected semantically, but "bee" should not be part of a gloss or simple name for the concept. Likewise `bee::hive` includes a separator that still links it to a semantic "bee" region in the list, and `bee..general` flags the concept as the most general term for bees while not needing to include that as part of a gloss. Use of the double colon should align with morpheme boundaries, thus `bee::s::wax` rather than `bees::wax` or `bee::swax`.
 
 Verb stems are explicitly marked with `:to` in all cases, without exception, reducing ambiguity in the concept naming. Any concept which may be ambiguous, such as `smoke`, can be immediately understood as a noun in the absence of `:to`.
 
