@@ -12,9 +12,7 @@ Verb stems are explicitly marked with `:to` in all cases, without exception, red
 
 Outside of the formatting itself, but related to the form in which concept IDs exist, all ambiguous concepts require some form of additional information in the ID to prevent confusion. A concept `spicy` may be misinterpreted in elicitation based on one's dialect of English to mean "having a great amount of spices". This is resolved by appending `..of.chilis`. While many such ambiguities should also be clear in the corresponding definitions for each comment, by including such information in the concept ID itself, there is one less possible point of confusion for those conducting the elicitation and data coding.
 
-This also allows for quick assignment or filtering for semantic categories. For example, most RICE nouns will begin with `rice:` or `rice.`. Thus `/rice[\.\:]+/` can be used to filter and assign tags to all such terms.
-
-Items which have names and glosses which are not related can be separated with an ellipsis, such as `that...ᴅɪsᴛ.ᴅᴇᴍ`.
+This also allows for quick assignment or filtering for semantic categories. For example, most RICE nouns will begin with `rice:` or `rice.`. Thus `/rice[\.\:]+/` can be used to filter and assign tags to all such terms. 
 
 ## tags
 
