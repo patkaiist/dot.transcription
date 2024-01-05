@@ -14,6 +14,8 @@ Outside of the formatting itself, but related to the form in which concept IDs e
 
 This also allows for quick assignment or filtering for semantic categories. For example, most RICE nouns will begin with `rice:` or `rice.`. Thus `/rice[\.\:]+/` can be used to filter and assign tags to all such terms.
 
+Items which have names and glosses which are not related can be separated with an ellipsis, such as `that...ᴅɪsᴛ.ᴅᴇᴍ`.
+
 ## tags
 
 ```
@@ -23,6 +25,7 @@ This also allows for quick assignment or filtering for semantic categories. For 
 ::      separator for semantic concept sorting
 ..      drop everything after in the display. used for notes, functionally the same as :.
 :::     Linnean taxonomy formatting
+...     separate gloss form to the right of the ellipsis
 ```
 
 The basic table looks like this, with all **name** and **gloss** values being automatically generated from the concept ID itself:
@@ -46,9 +49,15 @@ The basic table looks like this, with all **name** and **gloss** values being au
 | bos.frontalis..mithun::: | _Bos frontalis (mithun)_ | bos.frontalis | – | – |
 | bos.gaurus..gaur::: | _Bos gaurus (gaur)_ | bos.gaurus | – | – |
 
-The easiest way to use this right now is in a spreadsheet. In a spreadsheet, the concept value is easily converted to the name with `=SUBSTITUTE(REGEXREPLACE(REGEXREPLACE(REGEXREPLACE(REGEXREPLACE(REGEXREPLACE(REGEXREPLACE(IF(RIGHT(E35,3)=":::", UPPER(LEFT(E35,1))&MID(E35,2,LEN(E35)-4), E35),"([0-9a-z.]+)\:\.([0-9a-z.]+)","$1"),"([0-9a-z.]+)\.\:([0-9a-z.]+)","$2"),"([a-z.]+)\:\:([a-z.]+)","$1$2"),"([a-z.]+)\:([a-z.]+)","$2.$1"),"([0-9a-z.]+)\.\.([0-9a-z.\/]+)","$1 ($2)"),"([a-z.]+)\:([a-z.]+)","$2.$1"),"."," ")`.
+The easiest way to use this right now is in a spreadsheet. In a spreadsheet, the concept value is easily converted to the name with this:
+```
+=SUBSTITUTE(REGEXREPLACE(REGEXREPLACE(REGEXREPLACE(REGEXREPLACE(REGEXREPLACE(REGEXREPLACE(REGEXREPLACE(IF(RIGHT(A1,3)=":::", UPPER(LEFT(E886,1))&MID(E886,2,LEN(E886)-4), E886),"([a-z]+)\.\.\.([a-zA-Z .]+)","$1"),"([0-9a-z.]+)\:\.([0-9a-z.]+)","$1"),"([0-9a-z.]+)\.\:([0-9a-z.]+)","$2"),"([a-z.]+)\:\:([a-z.]+)","$1$2"),"([a-z.]+)\:([a-z.]+)","$2.$1"),"([0-9a-z.]+)\.\.([0-9a-zA-Z.\/]+)","$1 ($2)"),"([a-z.]+)\:([a-z.]+)","$2.$1"),"."," ")
+```
 
-The name can then be converted to the gloss with `=TRIM(REGEXREPLACE(REGEXREPLACE(LOWER(SUBSTITUTE(SUBSTITUTE(REGEXREPLACE(REGEXREPLACE(F34,"^to be ",""),"^to have ","")," of bird","")," ",".")),"^to ",""), "\.\([^)]*\)", ""))`.
+The name can then be converted to the gloss with this:
+```
+=TRIM(REGEXREPLACE(REGEXREPLACE(LOWER(SUBSTITUTE(SUBSTITUTE(REGEXREPLACE(REGEXREPLACE(A1,"^to be ",""),"^to have ","")," of bird","")," ",".")),"^to ",""), "\.\([^)]*\)", ""))
+```
 
 ## Reasonable questions to ask
 
