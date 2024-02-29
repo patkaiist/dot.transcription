@@ -55,6 +55,10 @@ The name can then be converted to the gloss with this:
 =TRIM(REGEXREPLACE(REGEXREPLACE(LOWER(SUBSTITUTE(SUBSTITUTE(REGEXREPLACE(REGEXREPLACE(A1,"^to be ",""),"^to have ","")," of bird","")," ",".")),"^to ",""), "\.\([^)]*\)", ""))
 ```
 
+## Disambiguation
+
+An important principle of the system is that ambiguity is always avoided. Verbal concepts should have `:to`, nouns which are homophones in English will not. Concepts such as "to cry" will be clearly disambiguated between crying out in pain `cry.out:to`, to signal someone vocally `call.out:to`, to give a war cry `war.cry:to.give`, and to weep `weep:to`. Similarly, soil, ground and earth in the metaphysical sense are all distinguished, though often may have the same term in the target language.
+
 ## Reasonable questions to ask
 
 Is this the best way to do this? Probably not.
